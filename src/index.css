@@ -1,8 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap");
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
 
-:root{
---color-primary: #f97316;     /* orange-500 */
+:root {
+  --color-primary: #f97316;
+  --color-primary-hover: #ea580c;
 
---color-primary-hover: #ea580c; /* orange-600 */
+  --color-accent-red: #ef4444;
+  --color-accent-red-dark: #b91c1c;
+
+  --color-glow-orange: #fb923c;
+  --color-glow-deep: #c2410c;
+
+  --color-bg: #000000;
+  --color-border: #262626;
 }
