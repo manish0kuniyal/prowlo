@@ -1,3 +1,5 @@
+
+import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <nav className="fixed top-10 left-0 w-full z-50 flex justify-center px-4">
@@ -10,12 +12,12 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4 text-base text-gray-300 font-medium">
-          <a href="#" className="hover:text-white transition">
+          <Link to="/dashboard" className="hover:text-white transition">
             About
-          </a>
-          <a href="#" className="hover:text-white transition">
+          </Link>
+          <Link href="#" className="hover:text-white transition">
             FAQ
-          </a>
+          </Link>
 
           <button className="ml-2 px-5 py-2.5 rounded-full font-medium text-base
             bg-orange-500 hover:bg-orange-600 transition
