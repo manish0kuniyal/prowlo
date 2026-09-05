@@ -28,3 +28,11 @@ mention third-party services if any
 
 You get referrer once per page load,
 but for your product you should capture it once per user session and store it
+
+
+referrer
+utm params
+current URL
+timestamp
+user agent
+anonymous session ID

@@ -1,3 +1,5 @@
+import { easeOut, motion } from "motion/react";
+
 const PaymentSection = () => {
   const plans = [
     {
@@ -18,8 +20,8 @@ const PaymentSection = () => {
     },
     {
       name: "Pro",
-      price: "₹499",
-      usdPrice: "$5.99",
+      price: "₹599",
+      usdPrice: "$6.73",
       description:
         "Advanced analytics for creators, startups and growing businesses.",
       buttonText: "Upgrade to Pro",
@@ -31,8 +33,6 @@ const PaymentSection = () => {
         "Google, Reddit, X & LinkedIn source tracking",
         "Average session duration",
         "Visitor journey analytics",
-        "Landing page performance",
-        "Real-time analytics",
         "Geographic insights",
         "Device & browser analytics",
         "UTM campaign tracking",
@@ -52,9 +52,13 @@ const PaymentSection = () => {
       />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-20">
-          
-
+        <motion.div
+          initial={{ opacity: 0, y: -15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
           <h2 className="text-5xl md:text-6xl font-semibold text-white mb-6">
             Simple pricing for
             <span
@@ -69,25 +73,27 @@ const PaymentSection = () => {
             Start free and upgrade whenever you need deeper traffic
             insights, attribution data and visitor behavior analytics.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`relative overflow-hidden rounded-3xl p-8 transition-all duration-300 ${
-                plan.featured
-                  ? "border-2 lg:scale-[1.03]"
-                  : "border"
-              }`}
-              style={{
-                borderColor: plan.featured
-                  ? "var(--color-primary)"
-                  : "var(--color-border)",
-                background: plan.featured
-                  ? "linear-gradient(180deg, rgba(249,115,22,0.08) 0%, rgba(255,255,255,0.015) 100%)"
-                  : "rgba(255,255,255,0.015)",
-              }}
+          {plans.map((plan, i) => (
+            <motion.div
+  key={plan.name}
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{
+    opacity: {
+      duration: 0.8,
+      delay: i * 0.2,
+      ease: "linear",
+    },
+  }}
+  viewport={{ once: true, amount: 0.2 }}
+  className={`relative overflow-hidden rounded-3xl p-8 transition-all duration-300 ${
+    plan.featured
+      ? "border-2 lg:scale-[1.03]"
+      : "border"
+  }`}
             >
               {plan.featured && (
                 <>
@@ -175,7 +181,7 @@ const PaymentSection = () => {
                   {plan.buttonText}
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

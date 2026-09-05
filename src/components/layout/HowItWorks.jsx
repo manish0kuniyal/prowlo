@@ -1,4 +1,5 @@
 import { Globe, Code2, BarChart3 } from "lucide-react";
+import { motion } from "motion/react";
 
 const steps = [
   {
@@ -20,21 +21,31 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="relative bg-black text-white  px-6 overflow-hidden">
-
+    <section className="relative bg-black text-white px-6 overflow-hidden">
 
       <div className="absolute bottom-[10%] right-[30%] w-[300px] h-[300px] bg-[#d4316a]/0 blur-[160px] rounded-full" />
 
-
       <div className="max-w-6xl mx-auto text-center relative z-10">
 
-        <h2 className="font-['Sora'] text-4xl md:text-6xl font-semibold tracking-tight">
-  How it works
-</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: -15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+          className="font-['Sora'] text-4xl md:text-6xl font-semibold tracking-tight"
+        >
+          How it works
+        </motion.h2>
 
-        <p className="mt-5 text-gray-400 text-lg">
+        <motion.p
+          initial={{ opacity: 0, y: -15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="mt-5 text-gray-400 text-lg"
+        >
           Get started in minutes. No complex setup.
-        </p>
+        </motion.p>
 
         <div className="mt-24 grid md:grid-cols-3 gap-10">
 
@@ -42,8 +53,12 @@ export default function HowItWorks() {
             const Icon = step.icon;
 
             return (
-              <div
+              <motion.div
                 key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.15 }}
+                viewport={{ once: true }}
                 className="p-10 md:p-12 rounded-2xl bg-white/[0.05] backdrop-blur-xl text-left min-h-[260px] flex flex-col justify-between"
               >
                 <div className="flex items-center justify-between mb-10">
@@ -59,7 +74,7 @@ export default function HowItWorks() {
                     {step.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
 

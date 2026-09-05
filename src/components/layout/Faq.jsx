@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "motion/react";
 
 const faqs = [
   {
@@ -39,15 +40,32 @@ export default function FAQ() {
     <section className="bg-black text-white py-36 px-6">
       <div className="max-w-3xl mx-auto">
 
-        <h2 className="text-3xl md:text-5xl font-semibold text-center tracking-tight">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            ease: "linear",
+          }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="text-4xl md:text-5xl font-semibold text-center tracking-tight"
+        >
           Frequently asked questions
-        </h2>
+        </motion.h2>
 
         <div className="mt-12 space-y-4">
 
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.15,
+                ease: "linear",
+              }}
+              viewport={{ once: true, amount: 0.2 }}
               className="border border-white/10 rounded-xl bg-white/5 backdrop-blur-md"
             >
               <button
@@ -72,7 +90,7 @@ export default function FAQ() {
                   {faq.answer}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
 
         </div>
