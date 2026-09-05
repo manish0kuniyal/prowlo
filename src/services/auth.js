@@ -46,16 +46,18 @@ export async function login(identifier, password) {
 }
 
 export async function getCurrentUser() {
-  const response = await fetch(`${API_URL}/api/auth/me`, {
-    method: "GET",
-    credentials: "include",
-  });
+  try {
+    const response = await fetch(`${API_URL}/api/auth/me`, {
+      method: "GET",
+      credentials: "include",
+    });
 
-  if (!response.ok) {
+    if (!response.ok) return null;
+
+    return response.json();
+  } catch {
     return null;
   }
-
-  return response.json();
 }
 
 export async function logout() {
