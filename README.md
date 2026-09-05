@@ -36,3 +36,17 @@ current URL
 timestamp
 user agent
 anonymous session ID 
+
+ 100 users click 100 tiems an ddo 100 events tha tincreae teh request made to backend and databse how to tackle thios
+
+ User does something
+      ↓
+Create an event
+      ↓
+Put event in local buffer
+      ↓
+Buffer reaches 10 events
+      ↓
+Send ONE HTTP request
+      ↓
+FastAPI

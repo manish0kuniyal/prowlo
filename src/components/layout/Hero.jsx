@@ -33,13 +33,11 @@ export default function Hero({ onGetStarted }) {
           transition={{ duration: 0.4, delay: 0.2 }}
           className="text-4xl sm:text-5xl md:text-7xl font-semibold tracking-tight leading-[1.1]"
         >
-          See where your{" "}
+          From traffic sources to{" "}
           <span className="italic font-[Inter] text-gray-200">
-            visitors
+            visitor interactions
           </span>{" "}
-          came from without the 
-          <br />
-          analytics headache
+          all in one place.
         </motion.h1>
 
         <motion.p
