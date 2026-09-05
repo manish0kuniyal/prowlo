@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-export default function Hero() {
+export default function Hero({ onGetStarted }) {
   return (
     <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-black text-white overflow-hidden">
 
@@ -19,8 +19,8 @@ export default function Hero() {
       <div className="relative z-10 text-center max-w-5xl px-6">
 
         <motion.p
-          initial={{ opacity: 0, y:-15}}
-          animate={{ opacity: 1, y:0 }}
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           className="text-sm text-gray-400 mb-4"
         >
@@ -28,18 +28,18 @@ export default function Hero() {
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y:-15 }}
-          animate={{ opacity: 1, y:0 }}
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
           className="text-4xl sm:text-5xl md:text-7xl font-semibold tracking-tight leading-[1.1]"
         >
-          Know exactly{" "}
+          See where your{" "}
           <span className="italic font-[Inter] text-gray-200">
-            where
+            visitors
           </span>{" "}
-          your traffic
+          came from without the 
           <br />
-          comes from
+          analytics headache
         </motion.h1>
 
         <motion.p
@@ -58,7 +58,10 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.3 }}
           className="mt-8 flex flex-col sm:flex-row justify-center gap-4"
         >
-          <button className="px-6 py-3 min-w-[160px] rounded-lg font-medium bg-orange-500 hover:bg-orange-600 hover:font-bold transition">
+          <button
+            onClick={onGetStarted}
+            className="px-6 py-3 min-w-[160px] rounded-lg font-medium bg-orange-500 hover:bg-orange-600 hover:font-bold transition"
+          >
             Get Started
           </button>
 
