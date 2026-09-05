@@ -35,4 +35,4 @@ utm params
 current URL
 timestamp
 user agent
-anonymous session ID
+anonymous session ID 

@@ -2,13 +2,20 @@ export default function Footer() {
   return (
     <footer className="relative bg-black text-white px-6 py-16 overflow-hidden">
 
-
       <div className="max-w-6xl mx-auto relative z-10">
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
 
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold">prowlo</h3>
+            <div className="flex items-center justify-center md:justify-start gap-2">
+              <img
+                src="/Prowlo.png"
+                alt="Prowlo"
+                className="w-8 h-8 object-contain"
+              />
+              <h3 className="text-lg font-semibold">prowlo</h3>
+            </div>
+
             <p className="text-sm text-gray-400 mt-2">
               Track exactly where your traffic comes from.
             </p>
